@@ -26,7 +26,8 @@ function Matrix() {
   // METHOD THAT HANDLES BOX CLICK
   const handleBoxClick = (index) => {
     if (isEffectOver) return;
-
+    if(clickedBoxes.includes(index)) return;
+    
     // BOX STATE TRACKING LOGIC: ONCLICK -> SET BG=GREEN 
     const newBoxColors = [...boxColors];
     newBoxColors[index] = boxColorVariant.active;
