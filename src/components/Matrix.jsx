@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { indexToMatrix } from "../utils/helper";
 
 // BOX COLOR VARIENT
 const boxColorVariant = {
@@ -72,7 +73,7 @@ function Matrix() {
 
           return <li key={index} className="flex gap-2 group text-lg">
             <span className={`${activeGrid === item ? "font-semibold" : ""} transition-all duration-200 `}>
-              ({Math.floor(item / 3)}, {item % 3})
+              {indexToMatrix(item)}
             </span>
             <span className="group-last:hidden ">&rarr;</span>
           </li>
